@@ -1,0 +1,12 @@
+<h2>Greatest Cricketers</h2>
+<ul class="players">
+  <li
+    *ngFor="let player of players"
+    [class.selected]="player === userPlayer"
+    (click)="onClick(player)"
+  >
+    <span class="badge">{{ player.id }}</span> {{ player.name }} scores
+    {{ player.runs }}
+  </li>
+</ul>
+<app-player-list [player]="userPlayer"></app-player-list>
