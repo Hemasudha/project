@@ -1,12 +1,21 @@
 <h2>Greatest Cricketers</h2>
+
+<div>
+  <label
+    >Player name:
+    <input #PlayerName />
+  </label>
+  <button (click)="add(PlayerName.value); PlayerName.value = ''">
+    add
+  </button>
+</div>
+
 <ul class="players">
-  <li
-    *ngFor="let player of players"
-    [class.selected]="player === userPlayer"
-    (click)="onClick(player)"
-  >
-    <span class="badge">{{ player.id }}</span> {{ player.name }} scores
-    {{ player.runs }}
+  <li *ngFor="let player of players">
+    <a routerLink="/detail/{{ player.id }}">
+      <span class="badge">{{ player.id }}</span> {{ player.name }} scores
+      {{ player.runs }}
+    </a>
+    <button class="delete" (click)="delete(player)">x</button>
   </li>
 </ul>
-<app-player-list [player]="userPlayer"></app-player-list>

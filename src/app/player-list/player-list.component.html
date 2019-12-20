@@ -7,6 +7,15 @@
       <input [(ngModel)]="player.name" placeholder="name" />
     </label>
     <p>Runs:{{ player.runs }}</p>
-    <!-- <button (click)="addButton()">Add</button> -->
+    <button (click)="goBack()">go back</button>
+  </div>
+  <div>
+    <label
+      >Player name:
+      <input #PlayerName />
+    </label>
+    <button (click)="add(PlayerName.value); PlayerName.value = ''">
+      add
+    </button>
   </div>
 </div>

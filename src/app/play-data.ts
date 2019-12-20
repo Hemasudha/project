@@ -8,6 +8,5 @@ export const PLAYERS: Player[] = [
   { id: 6, name: "Jaques Kallis", runs: "1739" },
   { id: 7, name: "Jack Hobbs", runs: "2799" },
   { id: 8, name: "Sydney Barnes", runs: "2539" },
-  { id: 9, name: "VV Richards", runs: "2749" },
-  { id: 10, name: "Imran khan", runs: "6739" }
+  { id: 9, name: "VV Richards", runs: "2749" }
 ];

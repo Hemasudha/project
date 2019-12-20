@@ -15,14 +15,24 @@ export class PlayersComponent implements OnInit {
 
   constructor(private playerService: PlayerService) {}
 
-  ngOnInit() {}
-
-  onClick(player: Player) {
-    this.userPlayer = player;
+  ngOnInit() {
+    this.getPlayers();
   }
-  // getPlayers(): void {
-  //   this.playerService
-  //     .getPlayers()
-  //     .subscribe(players => (this.players = players));
-  // }
+
+  getPlayers(): void {
+    this.playerService
+      .getPlayers()
+      .subscribe(players => (this.players = players));
+  }
+  add(name: string): void {
+    name = name.trim();
+
+    this.playerService.addName({ name } as Player).subscribe(player => {
+      this.players.push(player);
+    });
+  }
+  delete(player): void {
+    this.players = this.players.filter(h => h !== player);
+    this.playerService.deleteName(player).subscribe();
+  }
 }
