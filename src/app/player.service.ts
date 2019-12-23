@@ -34,6 +34,11 @@ export class PlayerService {
       .post<Player>(this.apiurl, player, this.httpOptions)
       .pipe(catchError(this.handleError<Player>("addPlayer")));
   }
+  updateHero(player: Player): Observable<Player> {
+    return this.http
+      .put(this.apiurl, player, this.httpOptions)
+      .pipe(catchError(this.handleError<any>("update")));
+  }
   deleteName(player: Player | number): Observable<Player> {
     const id = typeof player === "number" ? player : player.id;
     const url = `${this.apiurl}/${id}`;

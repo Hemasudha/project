@@ -29,4 +29,7 @@ export class PlayerListComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+  save() {
+    this.playerService.updateHero(this.player).subscribe(() => this.goBack());
+  }
 }

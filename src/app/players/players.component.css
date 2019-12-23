@@ -65,3 +65,6 @@ button.delete {
   background-color: gray !important;
   color: white;
 }
+div {
+  margin: 10px 0;
+}

@@ -9,7 +9,9 @@
     <p>Runs:{{ player.runs }}</p>
     <button (click)="goBack()">go back</button>
   </div>
-  <div>
+  <button (click)="save()">save</button>
+
+  <!-- <div>
     <label
       >Player name:
       <input #PlayerName />
@@ -17,5 +19,5 @@
     <button (click)="add(PlayerName.value); PlayerName.value = ''">
       add
     </button>
-  </div>
+  </div> -->
 </div>
